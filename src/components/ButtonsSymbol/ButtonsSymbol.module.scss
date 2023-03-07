@@ -1,0 +1,10 @@
+@import '../styles/components.module.scss';
+
+.buttonsSymbol {
+    @include shadow;
+    display: flex;
+    width: 240px;
+    height: 56px;
+    padding: 4px;
+    gap: 8px;
+}

@@ -1,0 +1,8 @@
+@import '../styles/components.module.scss';
+
+.buttonEquale {
+    @include shadow;
+    width: 240px;
+    height: 72px;
+    padding: 4px;
+}

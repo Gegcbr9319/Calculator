@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './App.module.scss';
+import { CalculatorWrapper } from '../index';
 
 export function App() {
     return (
-        <div>
-            <p>Start</p>
+        <div className={styles.appWraper}>
+            <CalculatorWrapper />
         </div>
     );
 }
