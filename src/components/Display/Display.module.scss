@@ -1,0 +1,19 @@
+@import '../styles/components.module.scss';
+
+.display {
+    @include shadow;
+    display: flex;
+    width: 240px;
+    height: 60px;
+    padding: 4px;
+}
+
+.displayShow {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f6;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
