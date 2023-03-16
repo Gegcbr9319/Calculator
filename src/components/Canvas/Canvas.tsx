@@ -18,9 +18,17 @@ interface IFragmentProps {
     index: number;
 }
 
+interface ISetting {
+    change: boolean;
+}
+
 export const Canvas = () => {
     const [canvas, setCanvas] = useState<IFragment[]>([]);
     const dispatch = useDispatch();
+
+    const change = useSelector(
+        (state: { settingState: { setting: ISetting } }) => state.settingState.setting
+    );
 
     const idArray = useSelector((state: { idState: { id: string[] } }) => state.idState.id);
 
@@ -28,8 +36,7 @@ export const Canvas = () => {
         accept: ['buttonEqualle', 'buttonsNumber', 'buttonsSymbol', 'display'],
 
         drop: (item: IFragmentProps) => {
-            console.log(item.index);
-            idArray.includes(item.id) ? sortFragment(item.id) : addFragmentCanvas(item.id);
+            addFragmentCanvas(item.id);
         },
         collect: (monitor) => ({
             isOver: !monitor.isOver(),
@@ -50,15 +57,15 @@ export const Canvas = () => {
         });
     };
 
-    const sortFragment = (id: string) => {
-        console.log(id);
-    };
-
     const deleteFragment = (e: React.MouseEvent<Element, MouseEvent>) => {
-        const delId = e.currentTarget.getAttribute('data-id') as string;
-        dispatch(deleteId(delId));
+        if (!change.change) {
+            return;
+        } else {
+            const delId = e.currentTarget.getAttribute('data-id') as string;
+            dispatch(deleteId(delId));
 
-        setCanvas((prev) => prev.filter((index) => index['data-id'] !== delId));
+            setCanvas((prev) => prev.filter((index) => index['data-id'] !== delId));
+        }
     };
 
     return (
@@ -76,7 +83,7 @@ export const Canvas = () => {
                 <Reorder.Group axis="y" values={canvas} onReorder={setCanvas}>
                     {canvas.map((item) => (
                         <Reorder.Item
-                            value={item}
+                            value={change.change ? item : undefined}
                             key={item['data-id']}
                             data-id={item['data-id']}
                             onDoubleClick={deleteFragment}
