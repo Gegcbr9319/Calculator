@@ -5,3 +5,6 @@ export * from './ButtonsSymbol';
 export * from './ButtonEqualle';
 export * from './CalculatorWrapper';
 export * from './Display';
+export * from './Setting';
+export * from './Canvas';
+export * from './array';

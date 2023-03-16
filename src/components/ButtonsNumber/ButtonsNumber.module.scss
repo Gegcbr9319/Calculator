@@ -9,6 +9,16 @@
     padding: 4px;
     gap: 8px;
 }
+.disabled {
+    opacity: 50%;
+    cursor: none;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 224px;
+    padding: 4px;
+    gap: 8px;
+}
 .buttonsLine {
     display: flex;
     flex-direction: row;

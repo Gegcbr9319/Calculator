@@ -6,6 +6,19 @@
     width: 240px;
     height: 60px;
     padding: 4px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.disabled {
+    opacity: 50%;
+    cursor: none;
+    display: flex;
+    width: 240px;
+    height: 60px;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: white;
 }
 
 .displayShow {
@@ -16,4 +29,5 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    border-radius: 6px;
 }

@@ -1,5 +1,15 @@
-.appWraper {
+.appWrapper {
     display: flex;
     margin: 0 auto;
     justify-content: center;
+    gap: 56px;
+}
+
+.canvasWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 243px;
+    height: 548px;
+    margin-top: 38px;
 }
