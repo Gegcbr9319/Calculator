@@ -23,6 +23,7 @@ export const ButtonsSymbol = (props: { ['data-id']: string }) => {
             <Button value="x" />
             <Button value="-" />
             <Button value="+" />
+            <Button value="Del" />
         </div>
     );
 };
