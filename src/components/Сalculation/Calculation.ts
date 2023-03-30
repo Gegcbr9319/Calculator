@@ -1,20 +1,20 @@
 export const Calculation = (numberFirst: string, numberSecond: string, numberSymbol: string) => {
-    const a = Number(numberFirst);
-    const b = numberSecond.length === 0 ? Number(numberFirst) : Number(numberSecond);
+    const firstOperand = Number(numberFirst);
+    const secondOperand = numberSecond.length === 0 ? Number(numberFirst) : Number(numberSecond);
     let result = 0;
 
     switch (numberSymbol) {
         case '+':
-            result = a + b;
+            result = firstOperand + secondOperand;
             break;
         case '-':
-            result = a - b;
+            result = firstOperand - secondOperand;
             break;
         case 'x':
-            result = a * b;
+            result = firstOperand * secondOperand;
             break;
         case '/':
-            result = a / b;
+            result = firstOperand / secondOperand;
             break;
     }
     return result.toString();

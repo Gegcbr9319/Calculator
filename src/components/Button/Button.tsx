@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     addNumberSecond,
@@ -6,7 +6,6 @@ import {
     addResult,
     addSymbol,
     cleanEqualle,
-    cleanNumbers,
     cleanNumberSecond,
     cleanNumberState,
     cleanResult,
@@ -57,14 +56,6 @@ export const Button: FC<IButton> = ({ value }) => {
         const symbols = '/-+x';
         if (change === false) {
             if (symbols.includes(button)) {
-                /* if (numberFirst && numberSecond && numberSymbol) {
-                    dispatch(addResult(Calculation(numberFirst, numberSecond, numberSymbol)));
-                    dispatch(cleanNumbers());
-                    dispatch(switchEqualle());
-                }
-                if (result) {
-                    dispatch(addResult(EqualleCalc(result, numberSecond, numberSymbol)));
-                } */
                 if (equalle === true) {
                     dispatch(updateNumberFirst(result));
                     dispatch(cleanResult());
@@ -88,15 +79,10 @@ export const Button: FC<IButton> = ({ value }) => {
                         ? dispatch(updateNumberSecond(numberSecond.slice(1)))
                         : dispatch(updateNumberSecond(`-${numberSecond}`));
             } else if (button === '=') {
-                /*  if (!numberSecond) {
-                    dispatch(updateNumberSecond(numberFirst));
-                } */
                 if (equalle === false) {
                     dispatch(addResult(Calculation(numberFirst, numberSecond, numberSymbol)));
                     dispatch(switchEqualle());
                 } else {
-                    /*   dispatch(updateNumberFirst(result));
-                    dispatch(cleanResult()); */
                     dispatch(addResult(EqualleCalc(result, numberSecond, numberSymbol)));
                 }
             } else if (button === 'Del') {
@@ -118,18 +104,6 @@ export const Button: FC<IButton> = ({ value }) => {
         }
     };
 
-    useEffect(() => {
-        console.log(numberSymbol, 'symb');
-    }, [numberSymbol]);
-    useEffect(() => {
-        console.log(numberSecond, 'second');
-    }, [numberSecond]);
-    useEffect(() => {
-        console.log(numberFirst, 'first');
-    }, [numberFirst]);
-    useEffect(() => {
-        console.log(result, 'result');
-    }, [result]);
     return (
         <button
             value={value}
