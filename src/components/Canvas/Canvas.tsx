@@ -88,6 +88,7 @@ export const Canvas = () => {
                             key={item['data-id']}
                             data-id={item['data-id']}
                             onDoubleClick={deleteFragment}
+                            dragListener={change.change ? true : false}
                         >
                             {<item.fragment data-id={item['data-id']} />}
                         </Reorder.Item>
