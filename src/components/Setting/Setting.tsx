@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { cleanNumberState } from '../../redux/numberSlice';
 import { changeSetting } from '../../redux/settingsSlice';
 import styles from './Setting.module.scss';
+import eyeUnActive from '../../../src/assets/eyeUnactive.svg';
+import eyeActive from '../../../src/assets/eyeActive.svg';
+import selectorActive from '../../../src/assets/selectorActive.svg';
+import selectorUnActive from '../../../src/assets/selectorUnactive.svg';
 
 interface ISetting {
     change: boolean;
@@ -22,14 +26,7 @@ export const Setting = () => {
                     dispatch(cleanNumberState());
                 }}
             >
-                <img
-                    src={
-                        change.change
-                            ? '../src/assets/eyeUnactive.svg'
-                            : '../src/assets/eyeActive.svg'
-                    }
-                    className={styles.img}
-                />
+                <img src={change.change ? eyeUnActive : eyeActive} className={styles.img} />
                 Runtime
             </button>
             <button
@@ -42,11 +39,7 @@ export const Setting = () => {
                 }}
             >
                 <img
-                    src={
-                        change.change === true
-                            ? '../src/assets/selectorActive.svg'
-                            : '../src/assets/selectorUnactive.svg'
-                    }
+                    src={change.change === true ? selectorActive : selectorUnActive}
                     className={styles.img}
                 />
                 Constructor

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addId, deleteId } from '../../redux/idSlice';
 import { arrayFragment } from '../index';
 import styles from './Canvas.module.scss';
+import imageLoad from '../../../src/assets/image.svg';
 
 interface IFragment {
     ['data-id']: string;
@@ -72,7 +73,7 @@ export const Canvas = () => {
         <div className={canvas.length === 0 ? styles.canvasEmpty : styles.canvas} ref={drop}>
             {canvas.length === 0 && (
                 <div className={styles.info}>
-                    <img src="./src/assets/image.svg"></img>
+                    <img src={imageLoad}></img>
                     <h2>Перетащите сюда</h2>
                     <p>
                         любой элемент <br></br> из левой панели
