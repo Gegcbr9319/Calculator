@@ -1,0 +1,52 @@
+@mixin active {
+    background-color: white;
+    border: 1px solid #f3f4f6;
+}
+@mixin unactive {
+    background-color: #f3f4f6;
+    border: none;
+    cursor: pointer;
+}
+@mixin display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.setting {
+    display: flex;
+    width: 243px;
+    height: 38px;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    padding: 1px;
+}
+
+.runtimeActive {
+    @include active;
+    @include display;
+    border-radius: 5px;
+    width: 108px;
+}
+.runtimeUnactive {
+    @include unactive;
+    @include display;
+    width: 108px;
+}
+.constructorActive {
+    @include active;
+    @include display;
+    border-radius: 6px;
+    width: 133px;
+}
+.constructorUnactive {
+    @include unactive;
+    @include display;
+    width: 133px;
+}
+
+.img {
+    width: 20px;
+    height: 20px;
+}

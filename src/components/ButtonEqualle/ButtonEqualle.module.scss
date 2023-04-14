@@ -1,0 +1,23 @@
+@import '../styles/components.module.scss';
+
+.buttonEquale {
+    @include shadow;
+    width: 240px;
+    height: 72px;
+    padding: 4px;
+}
+
+.buttonDragging {
+    width: 240px;
+    height: 72px;
+    padding: 4px;
+    @include dragging;
+}
+
+.disabled {
+    opacity: 50%;
+    width: 240px;
+    height: 72px;
+    padding: 4px;
+    cursor: none;
+}
